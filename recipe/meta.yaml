@@ -1,4 +1,4 @@
-{% set version = '1.0.0' %}
+{% set version = '1.0.1' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,12 +11,13 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DiagrammeR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DiagrammeR/DiagrammeR_{{ version }}.tar.gz
-  sha256: 2b186dae1b19018681b979e9444bf16559c42740d8382676fbaf3b0f8a44337e
+  sha256: ccee8acf608fc909e73c6de4374cef5a570cb62e5f454ac55dda736f22f3f013
 
 build:
   merge_build_host: True  # [win]
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -108,7 +109,7 @@ extra:
 
 # Package: DiagrammeR
 # Title: Graph/Network Visualization
-# Version: 1.0.0
+# Version: 1.0.1
 # Authors@R: person("Richard", "Iannone", email = "riannone@me.com", role = c("aut", "cre"))
 # Maintainer: Richard Iannone <riannone@me.com>
 # Description:  Build graph/network structures using functions for stepwise addition and deletion of nodes and edges. Work with data available in tables for bulk addition of nodes, edges, and associated metadata. Use graph selections and traversals to apply changes to specific nodes or edges. A wide selection of graph algorithms allow for the analysis of graphs. Visualize the graphs and take advantage of any aesthetic properties assigned to nodes and edges.
@@ -122,10 +123,10 @@ extra:
 # LazyData: true
 # RoxygenNote: 6.0.1
 # NeedsCompilation: no
-# Packaged: 2018-02-25 16:42:59 UTC; riannone
+# Packaged: 2019-04-21 07:44:49 UTC; ripley
 # Author: Richard Iannone [aut, cre]
 # Repository: CRAN
-# Date/Publication: 2018-03-01 18:01:14 UTC
+# Date/Publication: 2019-04-22 06:53:42 UTC
 
 # See
 # http://docs.continuum.io/conda/build.html for
